@@ -51,47 +51,6 @@
 <li>What is **kwargs and how to use it
 <li>How to handle named arguments in a function</li></ul>
 
-<h2>Copyright - Plagiarism</h2>
-<ul><li>You are tasked to come up with solutions for the tasks below yourself to meet with the above learning objectives.
-<li>You will not be able to meet the objectives of this or any following project by copying and pasting someone else’s work.
-<li>You are not allowed to publish any content of this project.
-<li>Any form of plagiarism is strictly forbidden and will result in removal from the program.</li></ul>
-
-
-<h2>Requirements</h2>
-<h3>Python Scripts</h3>
-<ul><li>Allowed editors: vi, vim, emacs
-<li>All your files will be interpreted/compiled on Ubuntu 20.04 LTS using python3 (version 3.8.5)
-<li>All your files should end with a new line
-<li>The first line of all your files should be exactly #!/usr/bin/python3
-<li>A README.md file, at the root of the folder of the project, is mandatory
-<li>Your code should use the pycodestyle (version 2.8.*)
-<li>All your files must be executable
-<li>The length of your files will be tested using wc
-<li>All your modules should have a documentation (python3 -c 'print(__import__("my_module").__doc__)')
-<li>All your classes should have a documentation (python3 -c 'print(__import__("my_module").MyClass.__doc__)')
-<li>All your functions (inside and outside a class) should have a documentation (python3 -c 'print(__import__("my_module").my_function.__doc__)' and python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)')
-<li>A documentation is not a simple word, it’s a real sentence explaining what’s the purpose of the module, class or method (the length of it will be verified)</li></ul>
-
-<h3>Python Unit Tests</h3>
-<ul><li>Allowed editors: vi, vim, emacs
-<li>All your files should end with a new line
-<li>All your test files should be inside a folder tests
-<li>You have to use the unittest module
-<li>All your test files should be python files (extension: .py)
-<li>All your test files and folders should start by test_
-<li>Your file organization in the tests folder should be the same as your project
-<li>e.g., For models/base_model.py, unit tests must be in: tests/test_models/test_base_model.py
-<li>e.g., For models/user.py, unit tests must be in: tests/test_models/test_user.py
-<li>All your tests should be executed by using this command: python3 -m unittest discover tests
-<li>You can also test file by file by using this command: python3 -m unittest tests/test_models/test_base_model.py
-<li>All your modules should have a documentation (python3 -c 'print(__import__("my_module").__doc__)')
-<li>All your classes should have a documentation (python3 -c 'print(__import__("my_module").MyClass.__doc__)')
-<li>All your functions (inside and outside a class) should have a documentation (python3 -c 'print(__import__("my_module").my_function.__doc__)' and python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)')
-<li>We strongly encourage you to work together on test cases, so that you don’t miss any edge case</ul>
-
-
-
 ## Execution
 
   
@@ -138,4 +97,50 @@ EOF help quit
 (hbnb)
 $
 
+```
+
+
+## Usage Examples
+
+**Launching the console**
+```
+$ ./console.py
+(hbnb) 
+```
+**Creating a new object**
+```
+(hbnb) create
+** class name missing **
+(hbnb) create User
+7b8c7a8b-f45a-4484-b6e2-aaed70cdac61
+```
+**Show an object**
+```
+(hbnb) show User
+** instance id missing **
+(hbnb) show User 7b8c7a8b-f45a-4484-b6e2-aaed70cdac61
+[User] (7b8c7a8b-f45a-4484-b6e2-aaed70cdac61) {'updated_at': datetime.datetime(2022, 3, 6, 14, 3, 12, 433468), 'id': '7b8c7a8b-f45a-4484-b6e2-aaed70cdac61', 'created_at': datetime.datetime(2022, 3, 6, 14, 3, 12, 433433)}
+```
+**Update an object**
+```
+(hbnb) all
+[[BaseModel] (27f7849d-1bb9-4cce-9e1e-3d933b2e882d) {'updated_at': datetime.datetime(2022, 3, 4, 5, 40, 47, 215829), 'id': '27f7849d-1bb9-4cce-9e1e-3d933b2e882d', 'created_at': datetime.datetime(2022, 3, 4, 5, 40, 47, 215822), 'name': 'My_First_Model', 'my_number': 89}, [BaseModel] (fc9c4248-2f98-4603-a716-27806a356b78) {'updated_at': datetime.datetime(2022, 3, 4, 5, 41, 28, 920273), 'id': 'fc9c4248-2f98-4603-a716-27806a356b78', 'created_at': datetime.datetime(2022, 3, 4, 5, 41, 28, 920267), 'name': 'My_First_Model', 'my_number': 89}, [BaseModel] (27dd53e5-e308-4bed-ac3d-eaa2ab4e941d) {'updated_at': datetime.datetime(2022, 3, 4, 5, 43, 54, 796849), 'id': '27dd53e5-e308-4bed-ac3d-eaa2ab4e941d', 'created_at': datetime.datetime(2022, 3, 4, 5, 43, 54, 796818)}, [User] (d6ded2d9-8cf9-4c44-8ab0-d47fa9a89a9f) {'updated_at': datetime.datetime(2022, 3, 4, 5, 46, 43, 114823), 'id': 'd6ded2d9-8cf9-4c44-8ab0-d47fa9a89a9f', 'created_at': datetime.datetime(2022, 3, 4, 5, 46, 43, 114813), 'first_name': 'Betty', 'last_name': 'Bar', 'email': 'airbnb@mail.com', 'password': 'root'}, [User] (8ce747cb-ce8e-498f-a493-ce415b8a6e6c) {'updated_at': datetime.datetime(2022, 3, 4, 5, 46, 43, 115617), 'id': '8ce747cb-ce8e-498f-a493-ce415b8a6e6c', 'created_at': datetime.datetime(2022, 3, 4, 5, 46, 43, 115610), 'first_name': 'John', 'email': 'airbnb2@mail.com', 'password': 'root'}, [User] (7b8c7a8b-f45a-4484-b6e2-aaed70cdac61) {'updated_at': datetime.datetime(2022, 3, 6, 14, 3, 12, 433468), 'id': '7b8c7a8b-f45a-4484-b6e2-aaed70cdac61', 'created_at': datetime.datetime(2022, 3, 6, 14, 3, 12, 433433)}]
+(hbnb) update
+** class name missing **
+(hbnb) update User
+** instance id missing **
+(hbnb) update User 7b8c7a8b-f45a-4484-b6e2-aaed70cdac61
+** attribute name missing **
+(hbnb) update User 7b8c7a8b-f45a-4484-b6e2-aaed70cdac61 Age "42"
+(hbnb) all
+[[BaseModel] (27f7849d-1bb9-4cce-9e1e-3d933b2e882d) {'updated_at': datetime.datetime(2022, 3, 4, 5, 40, 47, 215829), 'id': '27f7849d-1bb9-4cce-9e1e-3d933b2e882d', 'created_at': datetime.datetime(2022, 3, 4, 5, 40, 47, 215822), 'name': 'My_First_Model', 'my_number': 89}, [BaseModel] (fc9c4248-2f98-4603-a716-27806a356b78) {'updated_at': datetime.datetime(2022, 3, 4, 5, 41, 28, 920273), 'id': 'fc9c4248-2f98-4603-a716-27806a356b78', 'created_at': datetime.datetime(2022, 3, 4, 5, 41, 28, 920267), 'name': 'My_First_Model', 'my_number': 89}, [BaseModel] (27dd53e5-e308-4bed-ac3d-eaa2ab4e941d) {'updated_at': datetime.datetime(2022, 3, 4, 5, 43, 54, 796849), 'id': '27dd53e5-e308-4bed-ac3d-eaa2ab4e941d', 'created_at': datetime.datetime(2022, 3, 4, 5, 43, 54, 796818)}, [User] (d6ded2d9-8cf9-4c44-8ab0-d47fa9a89a9f) {'updated_at': datetime.datetime(2022, 3, 4, 5, 46, 43, 114823), 'id': 'd6ded2d9-8cf9-4c44-8ab0-d47fa9a89a9f', 'created_at': datetime.datetime(2022, 3, 4, 5, 46, 43, 114813), 'first_name': 'Betty', 'last_name': 'Bar', 'email': 'airbnb@mail.com', 'password': 'root'}, [User] (8ce747cb-ce8e-498f-a493-ce415b8a6e6c) {'updated_at': datetime.datetime(2022, 3, 4, 5, 46, 43, 115617), 'id': '8ce747cb-ce8e-498f-a493-ce415b8a6e6c', 'created_at': datetime.datetime(2022, 3, 4, 5, 46, 43, 115610), 'first_name': 'John', 'email': 'airbnb2@mail.com', 'password': 'root'}, [User] (7b8c7a8b-f45a-4484-b6e2-aaed70cdac61) {'updated_at': datetime.datetime(2022, 3, 6, 14, 5, 57, 527661), 'id': '7b8c7a8b-f45a-4484-b6e2-aaed70cdac61', 'created_at': datetime.datetime(2022, 3, 6, 14, 3, 12, 433433), 'Age': '42'}]
+```
+**Destroy an object**
+```
+(hbnb) destroy
+** class name missing **
+(hbnb) destroy User
+** instance id missing **
+(hbnb) destroy User 7b8c7a8b-f45a-4484-b6e2-aaed70cdac61
+(hbnb)
 ```
