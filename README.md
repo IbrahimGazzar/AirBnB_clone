@@ -35,6 +35,7 @@
 <li>Destroy an object
 </ul>
 
+
 <h2>Learning Objectives</h2>
 <p>At the end of this project, you are expected to be able to explain to anyone, without the help of Google:</p>
 
@@ -56,6 +57,7 @@
 <li>You are not allowed to publish any content of this project.
 <li>Any form of plagiarism is strictly forbidden and will result in removal from the program.</li></ul>
 
+
 <h2>Requirements</h2>
 <h3>Python Scripts</h3>
 <ul><li>Allowed editors: vi, vim, emacs
@@ -71,7 +73,7 @@
 <li>All your functions (inside and outside a class) should have a documentation (python3 -c 'print(__import__("my_module").my_function.__doc__)' and python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)')
 <li>A documentation is not a simple word, it’s a real sentence explaining what’s the purpose of the module, class or method (the length of it will be verified)</li></ul>
 
-<h3Python Unit Tests</h3>
+<h3>Python Unit Tests</h3>
 <ul><li>Allowed editors: vi, vim, emacs
 <li>All your files should end with a new line
 <li>All your test files should be inside a folder tests
