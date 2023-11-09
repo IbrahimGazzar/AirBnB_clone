@@ -7,6 +7,7 @@ attributes from.
 import datetime
 import uuid
 
+
 class BaseModel():
     """
     The base model from which all other classes in the AirBnB project will
@@ -18,13 +19,18 @@ class BaseModel():
         updated_at (datetime): datetime when an instance is created
             and it will be updated every time you change your object.
     """
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """
         Initialization function that sets up all the main attributes
         """
-        self.id = str(uuid.uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = datetime.now()
+        if kwargs:
+            self.id = kwargs["id"]
+            self.created_at = datetime.fromisoformat(kwargs["created_at"])
+            self.updated_at = datetime.fromisoformat(kwargs["updated_at"])
+        else:
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
 
     def __str__(self):
         """
@@ -45,7 +51,7 @@ class BaseModel():
         Returns a dictionary containing all keys/values of __dict__
         of the instance.
         """
-        dicti = self.__dict__
+        dicti = dict(self.__dict__)
         dicti['__class__'] = type(self).__name__
         dicti['created_at'] = dicti['created_at'].isoformat()
         dicti['updated_at'] = dicti['updated_at'].isoformat()
