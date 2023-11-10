@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""The Consule Module
+"""The Console Module (command interpreter)
 This module can display a prompt and take in commands.
 """
 
