@@ -4,9 +4,10 @@ Unittest module used for testing the BaseModel class
 """
 
 from datetime import datetime
-import unittest
 from models.base_model import BaseModel
-
+from models import storage
+import os
+import unittest
 
 class TestBase(unittest.TestCase):
     """
@@ -36,7 +37,8 @@ class TestBase(unittest.TestCase):
 
     def test_base_2_save(self):
         """
-        Tests the save function of base model
+        Tests the save function's updation of the updated_at
+        attribute of base model
         """
         datte1 = self.bm1.updated_at
         self.bm1.save()
@@ -70,9 +72,25 @@ class TestBase(unittest.TestCase):
         self.assertEqual(self.bm2.created_at, bm3.created_at)
         self.assertEqual(self.bm2.updated_at, bm3.updated_at)
 
+    def test_base_5_init(self):
+        """
+        Tests whether base models are saved correctly in the
+        json file or not
+        """
+        pass
+
+    def test_base_6_save(self):
+        """
+        Tests if the base model's save function correctly calls
+        FileStorage's save function
+        """
+        pass
+
     def TearDown(self):
         """
         Deletes objects after testing
         """
         del self.bm1
         del self.bm2
+        if os.path.exists("file.json"):
+            os.remove("file.json")
