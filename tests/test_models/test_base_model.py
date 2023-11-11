@@ -9,6 +9,7 @@ from models import storage
 import os
 import unittest
 
+
 class TestBase(unittest.TestCase):
     """
     The class used for all tests relating the BaseModel
@@ -77,14 +78,33 @@ class TestBase(unittest.TestCase):
         Tests whether base models are saved correctly in the
         json file or not
         """
-        pass
+        self.assertIsInstance(storage.all(), dict)
+        self.assertNotEqual(len(storage.all()), 0)
+        for name, dicti in storage.all().items():
+            self.assertRegex(name, '^BaseModel')
+            self.assertTrue('__class__' in dicti)
+            self.assertTrue('updated_at' in dicti)
+            self.assertTrue('created_at' in dicti)
+            self.assertTrue('id' in dicti)
 
     def test_base_6_save(self):
         """
         Tests if the base model's save function correctly calls
         FileStorage's save function
         """
-        pass
+        dict_dicts = storage.all()
+        self.bm1.save()
+        self.assertTrue(os.path.exists("file.json"))
+        storage.reload()
+        self.assertEqual(dict_dicts, storage.all())
+        bm3 = BaseModel(**(self.bm1.to_dict()))
+        bm3.save()
+        storage.reload()
+        self.assertEqual(dict_dicts, storage.all())
+        bm4 = BaseModel()
+        bm4.save()
+        storage.reload()
+        self.assertNotEqual(dict_dicts, storage.all())
 
     def TearDown(self):
         """
