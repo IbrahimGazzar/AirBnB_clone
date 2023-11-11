@@ -32,7 +32,7 @@ class FileStorage:
         """
         Returns the dictionary __objects
         """
-        return __objects
+        return self.__objects
 
     def new(self, obj):
         """
@@ -42,17 +42,20 @@ class FileStorage:
             obj (obj): object to be set with key
                 <obj class name>.id
         """
-        __objects[f"{type(obj)}.{obj.id}"] = obj.to_dict()
+        self.__objects[f"{type(obj)}.{obj.id}"] = obj.to_dict()
 
     def save(self):
         """
         Serializes __objects to the JSON file
         """
-        pass
+        with open(self.__filepath, 'w', encoding="utf-8"):
+            json.dump(self.__objects, self.__filepath)
 
     def reload(self):
         """
         Deserializes the JSON file to __objects. If __file_path
         is empty or doesn't exist, it does nothing
         """
-        pass
+        try:
+            with open(self.__filepath, 'r', encoding="utf-8"):
+                json.load(self.__filepath, self.__objects)
