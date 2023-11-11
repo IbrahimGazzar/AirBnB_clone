@@ -25,8 +25,8 @@ class FileStorage:
         """
         Intializes an instance of this class
         """
-        __file_path = file.json
-        __objects = {}
+        self.__file_path = "file.json"
+        self.__objects = {}
 
     def all(self):
         """
@@ -42,14 +42,14 @@ class FileStorage:
             obj (obj): object to be set with key
                 <obj class name>.id
         """
-        self.__objects[f"{type(obj)}.{obj.id}"] = obj.to_dict()
+        self.__objects[f"{type(obj).__name__}.{obj.id}"] = obj.to_dict()
 
     def save(self):
         """
         Serializes __objects to the JSON file
         """
-        with open(self.__filepath, 'w', encoding="utf-8"):
-            json.dump(self.__objects, self.__filepath)
+        with open(self.__file_path, 'w', encoding="utf-8") as fp:
+            json.dump(self.__objects, fp)
 
     def reload(self):
         """
@@ -57,5 +57,7 @@ class FileStorage:
         is empty or doesn't exist, it does nothing
         """
         try:
-            with open(self.__filepath, 'r', encoding="utf-8"):
-                json.load(self.__filepath, self.__objects)
+            with open(self.__file_path, 'r', encoding="utf-8") as fp:
+                self.__objects = json.load(fp)
+        except FileNotFoundError:
+            pass
