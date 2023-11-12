@@ -8,6 +8,7 @@ import json
 import models
 from models.base_model import BaseModel
 import shlex
+CLASS_MAPPING = {"BaseModel": BaseModel}
 
 
 class HBNBCommand(cmd.Cmd):
@@ -32,7 +33,6 @@ class HBNBCommand(cmd.Cmd):
     def do_create(self, line):
         """Creates a new instance of a class"""
         args = shlex.split(line)
-        cls_names = ["BaseModel"]
         """
         Split the passed arguments to interpret them as console
         commands and store them in an array format
@@ -40,21 +40,23 @@ class HBNBCommand(cmd.Cmd):
         if len(args) == 0:
             print("** class name missing **")
             return False
-        if args[0] not in cls_names:
+        if args[0] not in CLASS_MAPPING.keys():
             print("** class doesn't exist **")
             return False
-        if args[0] == "BaseModel":
-            bm1 = BaseModel()
+        if args[0] in CLASS_MAPPING.keys():
+            clas = CLASS_MAPPING.get(args[0], CLASS_MAPPING[args[0]])
+            bm1 = clas()
             bm1.save()
             print(bm1.id)
 
     def do_show(self, arg):
         """Prints an instance as a string based on the class and id"""
         args = shlex.split(arg)
+        _all = models.storage.all()
         if len(args) == 0:
             print("** class name missing **")
             return False
-        if args[0]:
+        if args[0] in CLASS_MAPPING.keys():
             if len(args) > 1:
                 key = args[0] + "." + args[1]
                 """
@@ -62,8 +64,9 @@ class HBNBCommand(cmd.Cmd):
                 with dot to be able to execute the action, eg: show
                 User, it will execute User.show to display user data.
                 """
-                if key in models.storage.all():
-                    bm1 = BaseModel(**(models.storage.all()[key]))
+                if key in _all:
+                    clas = CLASS_MAPPING.get(args[0], CLASS_MAPPING[args[0]])
+                    bm1 = clas(**(_all[key]))
                     print(bm1)
                 else:
                     print("** no instance found **")
@@ -97,18 +100,54 @@ class HBNBCommand(cmd.Cmd):
         """
         args = shlex.split(arg)
         str_list = []
-        class_mapping = {"BaseModel": BaseModel}
+        _all = models.storage.all()
         if len(args) == 0:
-            for key, value in models.storage.all().items():
-                name = value[__class__]
-                clas = class_mapping.get(name, class_mapping[name])
+            for key, value in _all.items():
+                name = value['__class__']
+                clas = CLASS_MAPPING.get(name, CLASS_MAPPING[name])
                 bm = clas(**value)
                 str_list.append(bm.__str__())
-        elif arg[0] == "BaseModel":
-            for key, value in models.storage.all.items():
-                if value[__class__] == "BaseModel":
-                    bm = BaseModel(**value)
-                    str_list.appened(bm.__str__())
+        elif args[0] in CLASS_MAPPING.keys():
+            for key, value in _all.items():
+                if value['__class__'] == args[0]:
+                    clas = CLASS_MAPPING.get(args[0], CLASS_MAPPING[args[0]])
+                    bm = clas(**value)
+                    str_list.append(bm.__str__())
+        else:
+            print("** class doesn't exist **")
+            return False
+        print(str_list)
+
+    def do_update(self, arg):
+        """
+         Updates an instance based on the class name and id by adding
+        or updating attribute
+        """
+        cls_names = ["BaseModel"]
+        args = shlex.split(arg)
+        if len(args) == 0:
+            print("** class name missing **")
+            return False
+        if args[0] not in cls_names:
+            print("** class doesn't exist **")
+            return False
+        if len(args) == 1:
+            print("** instance id missing **")
+            return False
+        entry_id = args[0] + "." + args[1]
+        _all = models.storage.all()
+        if entry_id not in _all.keys():
+            print("** no instance found **")
+            return False
+        if len(args) == 2:
+            print("** attribute name missing **")
+            return False
+        if len(args) == 3:
+            print("** value missing **")
+            return False
+        _all[entry_id][args[2]] = args[3]
+        models.storage.save()
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
