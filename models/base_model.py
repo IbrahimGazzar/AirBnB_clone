@@ -25,9 +25,13 @@ class BaseModel():
         Initialization function that sets up all the main attributes
         """
         if kwargs:
-            self.id = kwargs["id"]
-            self.created_at = datetime.fromisoformat(kwargs["created_at"])
-            self.updated_at = datetime.fromisoformat(kwargs["updated_at"])
+            for key, value in kwargs.items():
+                if key == 'created_at' or key == 'updated_at':
+                    setattr(self, key, datetime.fromisoformat(value))
+                elif key == '__class__':
+                    pass
+                else:
+                    setattr(self, key, value)
         else:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
