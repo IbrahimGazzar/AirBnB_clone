@@ -4,7 +4,9 @@ This module can display a prompt and take in commands.
 """
 
 import cmd
+import json
 import models
+from models.base_model import BaseModel
 import shlex
 
 
@@ -30,6 +32,7 @@ class HBNBCommand(cmd.Cmd):
     def do_create(self, line):
         """Creates a new instance of a class"""
         args = shlex.split(line)
+        cls_names = ["BaseModel"]
         """
         Split the passed arguments to interpret them as console
         commands and store them in an array format
@@ -37,9 +40,13 @@ class HBNBCommand(cmd.Cmd):
         if len(args) == 0:
             print("** class name missing **")
             return False
-        else:
+        if args[0] not in cls_names:
             print("** class doesn't exist **")
             return False
+        if args[0] == "BaseModel":
+            bm1 = BaseModel()
+            bm1.save()
+            print(bm1.id)
 
     def do_show(self, arg):
         """Prints an instance as a string based on the class and id"""
@@ -56,7 +63,8 @@ class HBNBCommand(cmd.Cmd):
                 User, it will execute User.show to display user data.
                 """
                 if key in models.storage.all():
-                    print(models.storage.all()[key])
+                    bm1 = BaseModel(**(models.storage.all()[key]))
+                    print(bm1)
                 else:
                     print("** no instance found **")
             else:
