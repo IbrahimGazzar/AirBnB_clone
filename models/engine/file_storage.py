@@ -5,6 +5,8 @@ is responsible for serializing and deserializing
 the objects we will use for the AirBnB project
 """
 import json
+from models.base_model import BaseModel
+from models.user import User
 
 
 class FileStorage:
