@@ -1,0 +1,25 @@
+#!/usr/bin/python3
+"""
+This unit test module is used for tests regarding
+the file storage class and its functionalities
+"""
+from datetime import datetime
+from models.base_model import BaseModel
+from models import storage
+import os
+import unittest
+
+
+class TestStorage(unittest.TestCase):
+    """
+    This class contains the tests for the file storage
+    class
+    """
+    def setUp(self):
+        """
+        Set up function for all the needed tests
+        """
+        self.bm1 = BaseModel()
+        self.bm2 = BaseModel()
+
+    

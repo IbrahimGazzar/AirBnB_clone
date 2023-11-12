@@ -73,39 +73,6 @@ class TestBase(unittest.TestCase):
         self.assertEqual(self.bm2.created_at, bm3.created_at)
         self.assertEqual(self.bm2.updated_at, bm3.updated_at)
 
-    def test_base_5_init(self):
-        """
-        Tests whether base models are saved correctly in the
-        json file or not
-        """
-        self.assertIsInstance(storage.all(), dict)
-        self.assertNotEqual(len(storage.all()), 0)
-        for name, dicti in storage.all().items():
-            self.assertRegex(name, '^BaseModel')
-            self.assertTrue('__class__' in dicti)
-            self.assertTrue('updated_at' in dicti)
-            self.assertTrue('created_at' in dicti)
-            self.assertTrue('id' in dicti)
-
-    def test_base_6_save(self):
-        """
-        Tests if the base model's save function correctly calls
-        FileStorage's save function
-        """
-        dict_dicts = storage.all()
-        self.bm1.save()
-        self.assertTrue(os.path.exists("file.json"))
-        storage.reload()
-        self.assertEqual(dict_dicts, storage.all())
-        bm3 = BaseModel(**(self.bm1.to_dict()))
-        bm3.save()
-        storage.reload()
-        self.assertEqual(dict_dicts, storage.all())
-        bm4 = BaseModel()
-        bm4.save()
-        storage.reload()
-        self.assertNotEqual(dict_dicts, storage.all())
-
     def TearDown(self):
         """
         Deletes objects after testing
