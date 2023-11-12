@@ -90,6 +90,25 @@ class HBNBCommand(cmd.Cmd):
         else:
             print("** class doesn't exist **")
 
+    def do_all(self, arg):
+        """
+        Prints all string representation of all instances based or not
+        on the class name
+        """
+        args = shlex.split(arg)
+        str_list = []
+        class_mapping = {"BaseModel": BaseModel}
+        if len(args) == 0:
+            for key, value in models.storage.all().items():
+                name = value[__class__]
+                clas = class_mapping.get(name, class_mapping[name])
+                bm = clas(**value)
+                str_list.append(bm.__str__())
+        elif arg[0] == "BaseModel":
+            for key, value in models.storage.all.items():
+                if value[__class__] == "BaseModel":
+                    bm = BaseModel(**value)
+                    str_list.appened(bm.__str__())
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
