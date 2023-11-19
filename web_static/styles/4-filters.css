@@ -1,5 +1,6 @@
 .filters {
     align-items: center;
+    display: flex;
     background: white;
     height: 70px;
     width: 100%;
@@ -17,6 +18,6 @@
     margin-left: auto;
     margin-right: 30px;
 }
-.filter button:hover {
+.filters button:hover {
     opacity: 90%;
 }
