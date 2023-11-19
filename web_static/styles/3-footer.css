@@ -8,5 +8,6 @@ footer {
     bottom: 0;
 }
 footer p{
-          margin: 0;
+    text-align: center;
+    margin: 0;
 }
