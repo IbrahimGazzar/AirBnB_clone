@@ -21,7 +21,7 @@
 }
 .places article h2 {
     max-width: 100%;
-    float: left;
+    display: inline-block;
     font-size: 30px;
     margin: 0 0 0 auto;
     text-align: center;
