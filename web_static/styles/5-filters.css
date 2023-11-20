@@ -26,7 +26,7 @@
 .filters .amenities {
     height: 100%;
     width: 25%;
-    text-align: center;
+    padding: 0 30px;
 }
 
 .filters .locations {
@@ -36,12 +36,11 @@
 .filters .locations h3,
 .filters .amenities h3 {
     font-weight: 600;
-    text-align: center;
+    margin-top: 10px;
 }
 
 .filters .locations h4,
 .filters .amenities h4 {
     font-weight: 400;
     font-size: 14px;
-    text-align: center;
 }
