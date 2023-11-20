@@ -23,7 +23,7 @@
 }
 .places article h2 {
     font-size: 30px;
-    margin: 0px 0px 0px auto;
+    text-align: center;
 }
 
 .places .price_by_night {
