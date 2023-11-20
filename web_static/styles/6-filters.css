@@ -1,5 +1,5 @@
 .filters {
-    align-items: center;
+    11;rgb:0000/0000/0000align-items: center;
     display: flex;
     background: white;
     height: 70px;
@@ -58,7 +58,7 @@ li {
 
 .popover {
     display: none;
-    position: absolute;
+    position: relative;
     width: 100%;
     background: #FAFAFA;
     border: #DDDDDD solid 1px;
