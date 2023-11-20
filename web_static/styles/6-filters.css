@@ -82,5 +82,6 @@ li {
 
 .filters .locations:hover .popover,
 .filters .amenities:hover .popover {
-    display: flex;
+    display: block;
+    z-index: 999;
 }
