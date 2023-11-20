@@ -23,8 +23,8 @@
     max-width: 100%;
     display: inline-block;
     font-size: 30px;
-    margin: 0 0 0 auto;
-    text-align: center;
+    position: relative;
+    right: 40px;
 }
 
 .places .price_by_night {
