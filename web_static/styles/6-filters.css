@@ -48,7 +48,6 @@
 }
 
 .popover {
-    padding: 0;
     margin: 0;
     background: #FAFAFA;
     width: 100%;
@@ -63,7 +62,6 @@
 .popover ul {
     list-style-type: none;
     padding: 0;
-    margin: 0;
 }
 .popover:hover {
     display: block;
