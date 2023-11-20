@@ -56,10 +56,10 @@ li {
 }
 
 .popover {
+    display: none;
     background: #FAFAFA;
     border: #DDDDDD solid 1px;
     border-radius: 4px;
-    list-style-type: none;
     margin: 20px -25px 0px -25px;
     padding: 20px 30px;
 }
@@ -67,12 +67,20 @@ li {
     font-size: 16px;
     margin-bottom: 0;
 }
+.popover li {
+    margin: 0 auto;
+}
 .popover ul {
-    list-style-type: none;
     padding: 0;
     margin-bottom: 20px;
 }
 .popover li li {
     padding-left: 10px;
+    margin-top: 0px;
     margin-bottom: 0px;
+}
+
+.filters .locations:hover .popover,
+.filters .amenities:hover .popover {
+    display: block;
 }
