@@ -28,11 +28,12 @@
     color: #FF5A5F;
     border: #FF5A5F solid 4px;
     border-radius: 50%;
-    min-width: 60px;
+    width: 60px;
     height: 60px;
     font-size: 30px;
     position: relative;
     right: 0;
+    text-align: center;
 }
 
 .places .information {
@@ -61,6 +62,14 @@
 
 .places .information .number_bathrooms {
     background-image: url("../images/icon_bath.png")
+}
+
+.places .information .max_guest p,
+.places .information .number_rooms p,
+.places .information .number_bathrooms p {
+    position: relative;
+    left: center;
+    bottom: 0;
 }
 
 .places .user {
