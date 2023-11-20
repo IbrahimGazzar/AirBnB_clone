@@ -37,6 +37,7 @@
 .filters .amenities h3 {
     font-weight: 600;
     margin-top: 10px;
+    margin-bottom: 0;
 }
 
 .filters .locations h4,
