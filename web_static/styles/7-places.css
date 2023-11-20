@@ -9,6 +9,8 @@
 }
 .places article {
     width: 390px;
+    height: 80px;
+    float: left;
     padding: 20px;
     margin: 20px;
     border: #FF5A5F solid 1px;
