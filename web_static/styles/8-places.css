@@ -85,9 +85,10 @@
 }
 
 .places .user {
-    
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .places .description {
-
+    margin-top: 10px;
 }
