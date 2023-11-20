@@ -47,6 +47,14 @@
     margin: 0;
 }
 
+ul {
+    list-style: none;
+}
+
+li {
+    line-height: 25px;
+}
+
 .popover {
     background: #FAFAFA;
     border: #DDDDDD solid 1px;
