@@ -19,7 +19,6 @@
     margin: 20px;
     border: #FF5A5F solid 1px;
     border-radius: 4px;
-    flex-wrap: wrap;
 }
 .places article h2 {
     font-size: 30px;
