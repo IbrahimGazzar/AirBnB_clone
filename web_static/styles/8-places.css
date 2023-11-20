@@ -22,14 +22,12 @@
 .places article h2 {
     font-size: 30px;
     text-align: center;
-    float: left;
 }
 
 .places .price_by_night {
     color: #FF5A5F;
     border: #FF5A5F solid 4px;
     border-radius: 50%;
-    float: right;
     min-width: 60px;
     height: 60px;
     font-size: 30px;
