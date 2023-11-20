@@ -20,11 +20,10 @@
     border-radius: 4px;
 }
 .places article h2 {
-    max-width: 100%;
+    width: 250px;
     display: inline-block;
     font-size: 30px;
-    position: absolute;
-    right: 40px;
+    text-align: center;
 }
 
 .places .price_by_night {
