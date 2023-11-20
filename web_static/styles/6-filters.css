@@ -47,7 +47,7 @@
     margin: 0;
 }
 
-.filters .popover {
+.popover {
     display: none;
     background: #FAFAFA;
     width: 100%;
@@ -56,9 +56,9 @@
     list-style-type: none;
 }
 
-.filters .popover h2 {
+.popover h2 {
     font-size: 16px;
 }
-.filter .popover:hover {
+.popover:hover {
     display: block;
 }
