@@ -65,6 +65,7 @@ li {
 }
 .popover h2 {
     font-size: 16px;
+    margin-bottom: 0;
 }
 .popover ul {
     list-style-type: none;
@@ -72,6 +73,6 @@ li {
     margin-bottom: 20px;
 }
 .popover li li {
-    padding-left: 0px;
+    padding-left: 10px;
     margin-bottom: 0px;
 }
