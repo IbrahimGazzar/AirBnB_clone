@@ -87,4 +87,5 @@ li {
 .filters .amenities:hover .popover {
     visibility: visible;
     opacity: 1;
+    z-index: 9999999999999999999;
 }
