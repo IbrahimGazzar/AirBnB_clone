@@ -21,10 +21,9 @@
 }
 .places article h2 {
     width: 250px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: inline-block;
     font-size: 30px;
+    text-align: center;
 }
 
 .places .price_by_night {
