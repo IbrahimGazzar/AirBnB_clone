@@ -28,11 +28,10 @@
     color: #FF5A5F;
     border: #FF5A5F solid 4px;
     border-radius: 50%;
-    width: 60px;
+    float: right;
+    min-width: 60px;
     height: 60px;
     font-size: 30px;
-    position: relative;
-    right: 0;
     text-align: center;
 }
 
