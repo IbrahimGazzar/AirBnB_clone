@@ -23,7 +23,7 @@
     max-width: 100%;
     display: inline-block;
     font-size: 30px;
-    position: relative;
+    position: absolute;
     right: 40px;
 }
 
