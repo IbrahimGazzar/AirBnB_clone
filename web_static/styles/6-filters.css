@@ -63,14 +63,12 @@ li {
     margin: 20px -25px 0px -25px;
     padding: 20px 30px;
 }
-
 .popover h2 {
     font-size: 16px;
 }
 .popover ul {
     list-style-type: none;
-}
-.popover li {
+    padding: 0;
     margin-bottom: 20px;
 }
 .popover li li {
