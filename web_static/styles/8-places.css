@@ -21,7 +21,7 @@
 }
 .places article h2 {
     font-size: 30px;
-    text-align: center;
+    margin: 0px 0px 0px auto;
 }
 
 .places .price_by_night {
@@ -79,7 +79,7 @@
 .places .information .max_guest p,
 .places .information .number_rooms p,
 .places .information .number_bathrooms p {
-    padding-top: 30px;
+    padding-top: 35px;
 }
 
 .places .user {
